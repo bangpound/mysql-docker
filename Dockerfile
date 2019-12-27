@@ -15,7 +15,11 @@ innodb_flush_log_at_trx_commit=2\n\
 sync_binlog=0\n\
 innodb_use_native_aio=0\n\
 datadir = /dev/shm/mysql\n\
-performance_schema=ON\n\
+performance_schema = ON\n\
+log_output = TABLE\n\
+log_queries_not_using_indexes = ON\n\
+slow_query_log = ON\n\
+general_log = ON\n\
 ' >> /etc/mysql/my.cnf
 
 COPY ./sys_1.5.1_56_inline.sql /docker-entrypoint-initdb.d/sys_1.5.1_56_inline.sql
