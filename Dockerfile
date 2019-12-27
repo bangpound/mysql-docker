@@ -17,3 +17,5 @@ innodb_use_native_aio=0\n\
 datadir = /dev/shm/mysql\n\
 performance_schema=ON\n\
 ' >> /etc/mysql/my.cnf
+
+COPY ./sys_1.5.1_56_inline.sql /docker-entrypoint-initdb.d/sys_1.5.1_56_inline.sql
